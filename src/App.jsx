@@ -15,7 +15,7 @@ function App() {
   return (
     <>
 
-      <Navigation />
+      <Navigation isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
       
       <div className="min-h-screen flex items-center justify-center dark:bg-[#26252a] light:bg-white">
       <ReadmeBox />
