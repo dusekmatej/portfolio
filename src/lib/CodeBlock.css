@@ -1,0 +1,151 @@
+@import 'tailwindcss';
+
+body {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.codeblock-container {
+    @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    @apply min-w-[50vw] min-h-[50vh];
+    font-family: monospace, sans-serif;
+}
+
+.codeblock-header {
+    @apply inline-block relative;
+    @apply bg-[#1e1e1e] mt-[1vw] z-50 py-[5px] px-[2vw];
+    border-radius: 10px 10px 0 0;
+}
+
+.codeblock-body {
+    @apply absolute top-[4vh] left-0  bg-[#1e1e1e];
+    @apply h-[36vh] w-full pt-[1vh];
+    border-radius: 0 10px 10px 10px;;
+    animation: glow 8s cubic-bezier(.4,0,.2,1) infinite;
+    will-change: box-shadow, transform;
+    backface-visibility: hidden;
+}
+
+.codeblock-body > p {
+    line-height: 165%;
+    position: absolute;
+    top: 1rem;
+    left: 3.5rem;
+    right: 1rem;
+    color: var(--dark-mode-text);
+}
+
+.codeblock-line-numbers {
+    @apply absolute left-3 top-6 ;
+    @apply mx-2.5; 
+
+    line-height: 165%;
+}
+
+
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow:
+            0 0 360px 22px rgba(255, 0, 0, 1.0);
+    }
+    50% {
+        box-shadow:
+            0 0 240px 12px rgba(255, 0, 0, 0.50);
+    }
+}
+
+
+/*  ---------- QUERIES ---------- */
+
+
+@media (max-width: 810px) {   
+    .codeblock-lines {
+        display: none;;
+    }
+
+    .codeblock-container {
+        min-width: 80vw;
+    }
+
+    .codeblock-body {
+        height: 100%;
+    }
+
+    .codeblock-body > p {
+        left: 5vw;
+    }
+}
+
+@media (max-width: 1100px) {
+    * {
+        font-size: 20px;
+    }
+
+    .codeblock-container {
+        min-width: 40vw;
+    }
+    
+}
+
+@media (max-height: 400px) {
+    .codeblock-body {
+        padding-bottom: 30%;
+    }
+}
+
+@media (max-height: 790px) {
+    .codeblock-body {
+        padding-bottom: 13%;
+    }
+}
+
+@media ((min-height: 800px)  and (max-height: 900px)) {
+    .codeblock-container {
+        min-height: 60vh;
+    }
+
+    .codeblock-header {
+        margin-top: 2vw;
+    }
+}
+
+@media (max-width: 760px) {
+    .codeblock-container {
+        position: static;
+        transform: none;
+        left: auto;
+        top: auto;
+        max-width: 90vw;
+        min-width: auto;
+        min-height: auto;
+        margin: 2vh auto;
+        border-radius: 8px;
+    }
+
+    .codeblock-header {
+        display: none;
+    }
+
+    .codeblock-body {
+        border-radius: 15px;
+        position: relative;
+        top: 0;
+        width: 90%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .codeblock-lines {
+        display: none;
+    }
+
+    .codeblock-body > p {
+        position: static;
+        left: auto;
+        right: auto;
+        margin: 0;
+    }
+}
