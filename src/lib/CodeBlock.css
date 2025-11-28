@@ -8,9 +8,14 @@ body {
 }
 
 .codeblock-container {
-    @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
-    @apply min-w-[50vw] min-h-[50vh];
-    font-family: monospace, sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 50vw;
+    min-height: 50vh;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .codeblock-header {
@@ -62,7 +67,7 @@ body {
 
 
 @media (max-width: 810px) {   
-    .codeblock-lines {
+    .codeblock-line-numbers {
         display: none;;
     }
 
@@ -94,6 +99,10 @@ body {
     .codeblock-body {
         padding-bottom: 30%;
     }
+}
+
+@media (max-width: 450px) and (max-height: 900px) {
+
 }
 
 @media (max-height: 790px) {
@@ -138,7 +147,7 @@ body {
         padding: 1rem;
     }
 
-    .codeblock-lines {
+    .codeblock-line-numbers {
         display: none;
     }
 
