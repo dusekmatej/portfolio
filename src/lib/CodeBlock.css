@@ -55,6 +55,12 @@ body {
     }
 }
 
+@media (max-width: 450px) {
+    .codeblock-container {
+        top: 75%;
+    }
+}
+
 
 
 
@@ -84,7 +90,7 @@ body {
         font-size: 20px;
     }
 
-    /* .codeblock-container {
+    .codeblock-container {
         min-width: 40vw;
     } 
     
@@ -107,7 +113,7 @@ body {
 }
 
 @media ((min-height: 800px)  and (max-height: 900px)) {
-    /* .codeblock-container {
+     .codeblock-container {
         min-height: 60vh;
     }
 
@@ -129,7 +135,7 @@ body {
         border-radius: 8px;
     } 
 
-    /* .codeblock-body {
+     .codeblock-body {
         border-radius: 15px;
         position: relative;
         top: 0;
@@ -148,4 +154,4 @@ body {
         right: auto;
         margin: 0;
     }
-} 
+}  */
